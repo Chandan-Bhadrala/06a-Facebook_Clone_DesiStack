@@ -69,9 +69,9 @@ const StorySection = () => {
           }}
         >
           <StoryCard isAddStory={true} />
-          {storyPosts?.map((story) => {
-            <StoryCard story={story} key={story._id} />;
-          })}
+          {storyPosts?.map((story) => (
+            <StoryCard story={story} key={story._id} />
+          ))}
         </motion.div>
 
         {/* Left Side Scroll Button */}
@@ -80,7 +80,7 @@ const StorySection = () => {
             variant="outline"
             size="icon"
             className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white dark:bg-gray-800 rounded-full shadow-lg transition-opacity duration-300 ease-in-out"
-            onclick={() => scroll("left")}
+            onClick={() => scroll("left")}
           >
             <ChevronLeft className="h-4 w-4" />
           </Button>
@@ -92,7 +92,7 @@ const StorySection = () => {
             variant="outline"
             size="icon"
             className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white dark:bg-gray-800 rounded-full shadow-lg transition-opacity duration-300 ease-in-out"
-            onclick={() => scroll("left")}
+            onClick={() => scroll("left")}
           >
             <ChevronRight className="h-4 w-4" />
           </Button>

@@ -9,10 +9,10 @@ const StoryCard = ({ isAddStory, story }) => {
   return (
     <>
       <Card
-        classname="w-40 h-60 relative overflow-hidden group cursor-pointer rounded-xl"
+        className="w-40 h-60 relative overflow-hidden group cursor-pointer rounded-xl"
         onClick={isAddStory ? undefined : handleStoryClick}
       >
-        <CardContent classname="p-0 h-full">
+        <CardContent className="p-0 h-full">
           {isAddStory ? (
             <div className="w-full h-full flex flex-col">
               <div className="h-3/4 w-full relative border-b">
@@ -46,13 +46,13 @@ const StoryCard = ({ isAddStory, story }) => {
                 <img
                   src={story?.mediaUrl}
                   alt={story.user.username}
-                  classname="w-full h-full object-cover"
+                  className="w-full h-full object-cover"
                 />
               ) : (
                 <video
                   src={story?.mediaUrl}
                   alt={story.user.username}
-                  classname="w-full h-full object-cover"
+                  className="w-full h-full object-cover"
                 />
               )}
               <div className="absolute top-2 left-2 ring-2 ring-blue-500 rounded-full">
@@ -74,9 +74,6 @@ const StoryCard = ({ isAddStory, story }) => {
           )}
         </CardContent>
       </Card>
-
-
-      
     </>
   );
 };
