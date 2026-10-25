@@ -12,7 +12,8 @@ const HomePage = () => {
     {
       _id: 1,
       content: "Hello World",
-      mediaUrl: "http://l",
+      mediaUrl:
+        "https://plus.unsplash.com/premium_photo-1792697407472-d21b67949b25?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
       mediaType: "image",
     },
   ];
