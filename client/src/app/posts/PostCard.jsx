@@ -18,12 +18,32 @@ import PostComments from "./PostComments";
 const PostCard = ({ post }) => {
   const [isShareDialogOpen, setIsShareDialogOpen] = useState(false);
   const [showComments, setShowComments] = useState(false);
-  const generateSharedLink = ()=>{
-    return `http://localhost:3000/${post?.id}`
-  }
-  const handleShare =(platform)=>{
+  const generateSharedLink = () => {
+    return `http://localhost:3000/${post?.id}`;
+  };
+  const handleShare = (platform) => {
+    const url = generateSharedLink();
+    let shareUrl;
+    switch (platform) {
+      case "facebook":
+        shareUrl = `https://www.facebook.com/sharer/sharer.php?u=}`;
+        break;
+      case "twitter":
+        shareUrl = `https://twitter.com/intent/tweet?url=}`;
+        break;
+      case "linkedin":
+        shareUrl = `https://www.linkedin.com/shareArticle?mini=true&url=}`;
+        break;
+      case "copy":
+        navigator.clipboard.writeText(url);
+        setIsShareDialogOpen(false);
+      default:
+        return;
+    }
+    window.open(shareUrl, "_blank");
+    setIsShareDialogOpen(false);
+  };
 
-  }
   return (
     <motion.div
       key={post._id}
@@ -73,7 +93,10 @@ const PostCard = ({ post }) => {
               2 likes
             </span>
             <div className=" flex gap-3">
-              <span className="text-sm text-gray-500 dark:text-gray-400 border-gray-400 hover:border-b-2 cursor-pointer" onClick={()=>setShowComments(!showComments)}>
+              <span
+                className="text-sm text-gray-500 dark:text-gray-400 border-gray-400 hover:border-b-2 cursor-pointer"
+                onClick={() => setShowComments(!showComments)}
+              >
                 3 comments
               </span>
               <span className="text-sm text-gray-500 dark:text-gray-400 border-gray-400 hover:border-b-2 cursor-pointer">
@@ -119,7 +142,7 @@ const PostCard = ({ post }) => {
                     Share on Linkedin
                   </Button>
                   <Button onClick={() => handleShare("copy")}>
-                    Share on Link
+                    Copy link
                   </Button>
                 </div>
               </DialogContent>
