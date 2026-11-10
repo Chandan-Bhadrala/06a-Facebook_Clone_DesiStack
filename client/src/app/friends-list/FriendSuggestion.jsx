@@ -1,7 +1,7 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { AnimatePresence, motion } from "framer-motion";
-import { UserMinus, UserPlus } from "lucide-react";
+import {  UserPlus } from "lucide-react";
 const FriendSuggestion = ({ friend }) => {
   return (
     <AnimatePresence>
