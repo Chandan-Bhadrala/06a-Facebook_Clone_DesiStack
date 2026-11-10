@@ -96,7 +96,9 @@ const VideoCard = ({ post }) => {
             </Dialog>
           </div>
           <div className="flex space-x-4 text-sm text-gray-500 dark:text-gray-400">
-            <Button variant="ghost" size="sm">3 likes</Button>
+            <Button variant="ghost" size="sm">
+              3 likes
+            </Button>
           </div>
         </div>
         <AnimatePresence>
